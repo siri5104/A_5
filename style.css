@@ -1,0 +1,299 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #34495E;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+  
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://contentsnare.com/wp-content/uploads/2021/12/8278-event-planning-questionnaire-1024x576.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;  /* Increased opacity for better visibility */
+    z-index: 0;    /* Ensure it stays in the background */
+}
+h1 {
+    position: relative;  /* Ensure heading appears above background */
+    z-index: 1;         /* Ensure heading is on top of background */
+}
+
+nav {
+    padding: 10px 0;
+    position: relative;  /* Ensure heading appears above background */
+    z-index: 1;         /* Ensure heading is on top of background */
+
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #1ABC9C;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Header buttons for Login and Register */
+.header-buttons {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.header-buttons .nav-btn {
+    background-color: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    padding: 10px 25px;
+    color: white;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.header-buttons .nav-btn:hover {
+    background-color: rgb(149, 160, 226);
+    color: #34495E;
+    border-color: #1ABC9C;
+}
+
+section.main-section {
+    text-align: center;
+    padding: 50px;
+}
+
+section.main-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+section.main-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Cards Section */
+.cards-container {
+    display: grid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    
+    overflow: hidden; /* To ensure cards stay within container when animating */
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: cardEnter 0.5s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+}
+
+/* Hover effect for card */
+.card:hover {
+    transform: translateY(0); /* Move card up slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+}
+
+/* Animation for cards */
+@keyframes cardEnter {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: cardEnter 0.5s ease-out forwards;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.card h3 {
+    margin: 20px 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+    .header-buttons {
+        top: auto; /* Adjust position for smaller screens */
+        right: 10px;
+        position: relative;
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section.main-section {
+        padding: 20px;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    section.main-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .nav-btn {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #F0F0F0;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.site-footer {
+    background-color: #1e2a38;
+    color: #ffffff;
+    padding: 40px 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #364657;
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #b0b0b0;
+}
